@@ -1,4 +1,8 @@
 name: bluebuild
+permissions:
+  contents: read
+  packages: write
+
 on:
   schedule:
     - cron: "00 10 */7 * *"
