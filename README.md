@@ -14,14 +14,12 @@
 
 ## What's Different?
 
-| Category            | Bluefin               | Kirgo                              |
-| ------------------- | --------------------- | ---------------------------------- |
-| **Compositor**      | GNOME Shell           | Niri                               |
-| **Display Manager** | GDM                   | greetd                             |
-| **Fonts**           | Full multilingual set | English + emoji only               |
-| **Apps**            | Full suite            | Essential apps only                |
-| **Shell**           | GNOME+extensions      | Dank Material Shell                |
-| **Kernel Options**  | Fedora defaults       | Full preemption and ntsync enabled |
+| Category            | Bluefin          | Kirgo                              |
+| ------------------- | ---------------- | ---------------------------------- |
+| **Compositor**      | GNOME Shell      | Niri                               |
+| **Display Manager** | GDM              | greetd                             |
+| **Shell**           | GNOME+extensions | Dank Material Shell                |
+| **Kernel Options**  | Fedora defaults  | Full preemption and ntsync enabled |
 
 ---
 
@@ -104,13 +102,13 @@ env BASE_IMAGE=ghcr.io/ublue-os/bluefin-nvidia-open:stable IMAGE_NAME=kirgo-nvid
 
 ## Upstream Projects
 
-| Topic               | Resource                                   |
-| ------------------- | ------------------------------------------ |
-| General Bluefin     | https://projectbluefin.io                  |
-| uBlue Project       | https://universal-blue.org                 |
-| uBlue Template      | https://github.com/ublue-os/image-template |
-| Niri Compositor     | https://niri-wm.github.io/niri/            |
-| Dank Material Shell | https://danklinux.com                      |
+| Topic               | Resource                        |
+| ------------------- | ------------------------------- |
+| General Bluefin     | https://projectbluefin.io       |
+| uBlue Project       | https://universal-blue.org      |
+| BlueBuild           | https://blue-build.org          |
+| Niri Compositor     | https://niri-wm.github.io/niri/ |
+| Dank Material Shell | https://danklinux.com           |
 
 ## License
 
