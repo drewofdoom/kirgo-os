@@ -39,26 +39,26 @@
 ```bash
 ## AMD/Intel Graphics
 # Preview what will be installed
-bootc preview --ref ostree/container://ghcr.io/drewofdoom/kirgo-os:kirgo
+bootc preview --ref ostree/container://ghcr.io/drewofdoom/kirgo:kirgo
 
 # Switch (requires reboot)
-bootc switch --transient ostree/container://ghcr.io/drewofdoom/kirgo-os:kirgo
+bootc switch --transient ostree/container://ghcr.io/drewofdoom/kirgo:kirgo
 
 # Or permanent switch
-bootc switch ostree/container://ghcr.io/drewofdoom/kirgo-os:kirgo
+bootc switch ostree/container://ghcr.io/drewofdoom/kirgo:kirgo
 ```
 
 #### NVIDIA Graphics (Open Source Driver)
 
 ```bash
 # Preview what will be installed
-bootc preview --ref ostree/container://ghcr.io/drewofdoom/kirgo-os:kirgo-nvidia-open
+bootc preview --ref ostree/container://ghcr.io/drewofdoom/kirgo-nvidia-open
 
 # Switch (requires reboot)
-bootc switch --transient ostree/container://ghcr.io/drewofdoom/kirgo-os:kirgo-nvidia-open
+bootc switch --transient ostree/container://ghcr.io/drewofdoom/kirgo-nvidia-open
 
 # Or permanent switch
-bootc switch ostree/container://ghcr.io/drewofdoom/kirgo-os:kirgo-nvidia-open
+bootc switch ostree/container://ghcr.io/drewofdoom/kirgo-nvidia-open
 ```
 
 #### Building Locally
