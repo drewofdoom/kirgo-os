@@ -45,7 +45,7 @@ bootc preview --ref ostree/container://ghcr.io/drewofdoom/kirgo:kirgo
 bootc switch --transient ostree/container://ghcr.io/drewofdoom/kirgo:kirgo
 
 # Or permanent switch
-sudo bootc switch --enforce-container-sigpolicy ostree/container://ghcr.io/drewofdoom/kirgo:kirgo
+sudo bootc switch --enforce-container-sigpolicy ghcr.io/drewofdoom/kirgo
 ```
 
 #### NVIDIA Graphics (Open Source Driver)
@@ -58,7 +58,7 @@ bootc preview --ref ostree/container://ghcr.io/drewofdoom/kirgo-nvidia-open
 bootc switch --transient ostree/container://ghcr.io/drewofdoom/kirgo-nvidia-open
 
 # Or permanent switch
-sudo bootc switch --enforce-container-sigpolicyswitch ostree/container://ghcr.io/drewofdoom/kirgo-nvidia-open
+sudo bootc switch --enforce-container-sigpolicy ghcr.io/drewofdoom/kirgo-nvidia-open
 ```
 
 #### Building Locally
