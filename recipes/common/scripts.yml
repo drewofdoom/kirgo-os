@@ -4,4 +4,5 @@ type: script
 snippets:
   - "chmod +x /usr/bin/greeter-group-setup"
   - "chmod +x /usr/bin/realtime-group-setup"
+  - "dnf5 clean all -y"
 ...

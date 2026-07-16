@@ -9,9 +9,13 @@ description: Bluefin modified with DMS and Niri
 base-image: ghcr.io/ublue-os/bluefin-nvidia-open
 image-version: stable # latest is also supported if you want new updates ASAP
 
+labels:
+  org.opencontainers.image.description: Kirgo OS based on Bluefin modified with DMS and Niri
+
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
+  - from-file: common/os-release-nvidia.yml
   - from-file: common/files.yml
   - from-file: common/kargs.yml
   - from-file: common/dnf.yml

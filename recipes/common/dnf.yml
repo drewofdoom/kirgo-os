@@ -11,7 +11,16 @@ repos:
     - scottames/ghostty
     - ulysg/xwayland-satellite
 install:
+  exclude:
+    - swaylock
+    - alacritty
+    - fuzzel
+    - waybar
   packages:
+    - repo: updates
+      packages:
+        - qt6-qtbase
+        - qt6-qtbase-gui
     - ghostty
     - adw-gtk3-theme
     - matugen
@@ -25,6 +34,7 @@ install:
     - dms-cli
     - dms-greeter
     - ghostty-fish-completion
+    - ghostty-nautilus
     - ghostty-shell-integration
     - ghostty-terminfo
     - material-symbols-fonts
@@ -41,6 +51,7 @@ install:
     - xwayland-run
     - xwayland-satellite
 remove:
+  auto-remove: true
   packages:
     - antiword
     - epiphany-runtime
