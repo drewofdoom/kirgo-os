@@ -1,43 +1,134 @@
-# kirgo-os &nbsp; [![bluebuild build badge](https://github.com/drewofdoom/kirgo-os/actions/workflows/build.yml/badge.svg)](https://github.com/drewofdoom/kirgo-os/actions/workflows/build.yml)
+# Kirgo
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
+> _"I was looking for the Cadillac..."_ — Jack Tenrec, _Cadillacs and Dinosaurs_ 1993 Arcade Game
 
-After setup, it is recommended you update this README to describe your custom image.
+**Kirgo** is a highly opinionated, streamlined desktop image based on Universal Blue's Bluefin. Named after the iconic comic series and its dinosaur theme, Kirgo takes Bluefin's rock-solid foundation and pares it down to essentials while keeping your GNOME services intact.
 
-## Installation
+---
 
-> [!WARNING]  
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
+## ⚠️ Important Notice
 
-To rebase an existing atomic Fedora installation to the latest build:
+**This is a custom modification of Bluefin.** If you value stability over customization, stick with official Bluefin images from [Project Bluefin](https://projectbluefin.io). Kirgo removes many GNOME packages, and non-essential fonts. Use at your own discretion.
 
-- First rebase to the unsigned image, to get the proper signing keys and policies installed:
-  ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/drewofdoom/kirgo-os:latest
-  ```
-- Reboot to complete the rebase:
-  ```
-  systemctl reboot
-  ```
-- Then rebase to the signed image, like so:
-  ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/drewofdoom/kirgo-os:latest
-  ```
-- Reboot again to complete the installation
-  ```
-  systemctl reboot
-  ```
+---
 
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+## What's Different?
 
-## ISO
+| Category             | Bluefin               | Kirgo                |
+| -------------------- | --------------------- | -------------------- |
+| **Compositor**       | GNOME Shell           | Niri                 |
+| **Display Manager**  | GDM                   | greetd               |
+| **Fonts**            | Full multilingual set | English + emoji only |
+| **Apps**             | Full suite            | Essential apps only  |
+| **Shell Extensions** | GNOME extensions      | Dank Material Shell  |
 
-If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/how-to/generate-iso/#_top). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
+---
 
-## Verification
+## Quick Start
 
-These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
+### Prerequisites
+
+- Fedora Atomic desktop (Silverblue/Kinoite) or existing uBlue image
+- `bootc` installed
+- Sufficient disk space (images are ~6–8 GB each)
+
+### Switching to Kirgo
+
+#### AMD/Intel Graphics (Main Build)
 
 ```bash
-cosign verify --key cosign.pub ghcr.io/drewofdoom/kirgo-os
+## AMD/Intel Graphics
+# Preview what will be installed
+bootc preview --ref ostree/container://ghcr.io/drewofdoom/kirgo-os:kirgo
+
+# Switch (requires reboot)
+bootc switch --transient ostree/container://ghcr.io/drewofdoom/kirgo-os:kirgo
+
+# Or permanent switch
+bootc switch ostree/container://ghcr.io/drewofdoom/kirgo-os:kirgo
 ```
+
+#### NVIDIA Graphics (Open Source Driver)
+
+```bash
+# Preview what will be installed
+bootc preview --ref ostree/container://ghcr.io/drewofdoom/kirgo-os:kirgo-nvidia-open
+
+# Switch (requires reboot)
+bootc switch --transient ostree/container://ghcr.io/drewofdoom/kirgo-os:kirgo-nvidia-open
+
+# Or permanent switch
+bootc switch ostree/container://ghcr.io/drewofdoom/kirgo-os:kirgo-nvidia-open
+```
+
+#### Building Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/drewofdoom/kirgo.git
+cd kirgo
+
+# Build AMD/Intel variant
+env BASE_IMAGE=ghcr.io/ublue-os/bluefin:stable IMAGE_NAME=kirgo DEFAULT_TAG=latest just build
+
+# Build NVIDIA variant
+env BASE_IMAGE=ghcr.io/ublue-os/bluefin-nvidia-open:stable IMAGE_NAME=kirgo-nvidia-open DEFAULT_TAG=latest just build
+```
+
+## Customizing
+
+#### Layer additional packages
+
+`rpm-ostree install <package-name>`
+
+#### Or use Flatpak for most applications
+
+`flatpak install flathub <application>`
+
+#### Or install stuff with brew
+
+`brew install <package-name>`
+
+#### Remove layered packages
+
+`rpm-ostree uninstall <package-name>`
+
+- Note: Do not remove base system packages. Use Flatpaks for application changes.
+
+#### Updating to the latest image
+
+`ujust update`
+
+- Automatic updates are handled by the uBlue update timer.
+
+## Upstream Projects
+
+| Topic               | Resource                                   |
+| ------------------- | ------------------------------------------ |
+| General Bluefin     | https://projectbluefin.io                  |
+| uBlue Project       | https://universal-blue.org                 |
+| uBlue Template      | https://github.com/ublue-os/image-template |
+| Niri Compositor     | https://niri-wm.github.io/niri/            |
+| Dank Material Shell | https://danklinux.com                      |
+
+## Known Limitations
+
+1. No GNOME Shell Extensions — Workspace management is handled by Niri
+2. Limited Fonts — Only English and emoji fonts; add as needed
+3. XWayland — Required for Steam/Reaper/WINE; kept intentionally
+4. Rollback Window — Limited to 90 days (uBlue default)
+
+## Credits
+
+- Bluefin: https://github.com/ublue-os/bluefin — Rock-solid Fedora base
+- Universal Blue: https://universal-blue.org — Cloud-native Linux delivery
+- Niri: https://niri.surf — Tiling Wayland compositor
+- Malcolm and Jack: For showing that dinos and hardware go together
+
+## License
+
+Apache 2.0 — See LICENSE file.
+
+---
+
+Built with ❤️ by drewofdoom

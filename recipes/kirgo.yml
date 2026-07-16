@@ -1,0 +1,23 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/<user>/<name>
+name: kirgo
+# description will be included in the image's metadata
+description: Bluefin modified with DMS and Niri
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/bluefin
+image-version: stable # latest is also supported if you want new updates ASAP
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - from-file: common/files.yml
+  - from-file: common/kargs.yml
+  - from-file: common/dnf.yml
+  - from-file: common/fonts.yml
+  - from-file: common/systemd.yml
+  - from-file: common/scripts.yml
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+...

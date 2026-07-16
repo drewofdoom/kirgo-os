@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# SCRIPT VERSION
+GREETER_GROUP_SETUP_VER=1
+GREETER_GROUP_SETUP_VER_FILE="/etc/ublue/greeter-group-setup"
+GREETER_GROUP_SETUP_VER_RAN=$(cat "$GREETER_GROUP_SETUP_VER_FILE" 2>/dev/null || echo "0")
+
+# make the directory if it doesn't exist
+mkdir -p /etc/ublue
+
+# Run script if updated
+if [[ -f "$GREETER_GROUP_SETUP_VER_FILE" && "$GREETER_GROUP_SETUP_VER" = "$GREETER_GROUP_SETUP_VER_RAN" ]]; then
+  echo "Greeter group setup has already run. Exiting..."
+  exit 0
+fi
+
+# Ensure greeter group exists
+if ! getent group greeter >/dev/null 2>&1; then
+  echo "Creating greeter group..."
+  groupadd --system greeter
+fi
+
+# Function to add wheel users to greeter group
+add_wheel_to_greeter() {
+  local wheel_users
+  wheel_users=$(getent group wheel | cut -d ":" -f 4 | tr ',' '\n')
+
+  for user in $wheel_users; do
+    if [[ -n "$user" ]]; then
+      echo "Adding $user to greeter group"
+      usermod -aG greeter "$user" 2>/dev/null || true
+    fi
+  done
+}
+
+# Add all wheel users to greeter
+add_wheel_to_greeter
+
+# Prevent future executions
+echo "Writing state file"
+echo "$GREETER_GROUP_SETUP_VER" >"$GREETER_GROUP_SETUP_VER_FILE"

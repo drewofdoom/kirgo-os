@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# SCRIPT VERSION
+REALTIME_GROUP_SETUP_VER=1
+REALTIME_GROUP_SETUP_VER_FILE="/etc/ublue/realtime-group-setup"
+REALTIME_GROUP_SETUP_VER_RAN=$(cat "$REALTIME_GROUP_SETUP_VER_FILE" 2>/dev/null || echo "0")
+
+# make the directory if it doesn't exist
+mkdir -p /etc/ublue
+
+# Run script if updated
+if [[ -f "$REALTIME_GROUP_SETUP_VER_FILE" && "$REALTIME_GROUP_SETUP_VER" = "$REALTIME_GROUP_SETUP_VER_RAN" ]]; then
+  echo "Realtime group setup has already run. Exiting..."
+  exit 0
+fi
+
+# Ensure realtime group exists
+if ! getent group realtime >/dev/null 2>&1; then
+  echo "Creating realtime group..."
+  groupadd --system realtime
+fi
+
+# Function to add wheel users to realtime group
+add_wheel_to_realtime() {
+  local wheel_users
+  wheel_users=$(getent group wheel | cut -d ":" -f 4 | tr ',' '\n')
+
+  for user in $wheel_users; do
+    if [[ -n "$user" ]]; then
+      echo "Adding $user to realtime group"
+      usermod -aG realtime "$user" 2>/dev/null || true
+    fi
+  done
+}
+
+# Add all wheel users to realtime
+add_wheel_to_realtime
+
+# Prevent future executions
+echo "Writing state file"
+echo "$REALTIME_GROUP_SETUP_VER" >"$REALTIME_GROUP_SETUP_VER_FILE"

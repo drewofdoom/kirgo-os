@@ -1,0 +1,113 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+---
+type: dnf
+repos:
+  files:
+    - "https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo"
+  keys:
+    - https://repos.fyralabs.com/terra44/key.asc
+  copr:
+    - avengemedia/dms
+    - scottames/ghostty
+    - ulysg/xwayland-satellite
+install:
+  packages:
+    - ghostty
+    - adw-gtk3-theme
+    - matugen
+    - bibata-cursor-theme
+    - cava
+    - cliphist
+    - dankcalendar-git
+    - danksearch
+    - dgop
+    - dms
+    - dms-cli
+    - dms-greeter
+    - ghostty-fish-completion
+    - ghostty-shell-integration
+    - ghostty-terminfo
+    - material-symbols-fonts
+    - nautilus
+    - papirus-icon-theme
+    - podman-compose
+    - podman-machine
+    - podman-tui
+    - qt6-qtmultimedia
+    - quickshell
+    - xdg-desktop-portal-gnome
+    - xdg-desktop-portal-gtk
+    - xwayland-run
+    - xwayland-satellite
+remove:
+  packages:
+    - antiword
+    - blueberry
+    - cheese
+    - epiphany-runtime
+    - evince
+    - evolution-data-server
+    - evolution-ews-core
+    - evolution-ews-langpacks
+    - gdm
+    - gnome-bluetooth
+    - gnome-color-manager
+    - gnome-connections
+    - gnome-contacts
+    - gnome-control-center
+    - gnome-disk-utility
+    - gnome-initial-setup
+    - gnome-logs
+    - gnome-maps
+    - gnome-music
+    - gnome-online-accounts
+    - gnome-online-accounts-libs
+    - gnome-remote-desktop
+    - gnome-session
+    - gnome-session-wayland-session
+    - gnome-shell
+    - gnome-shell-extension-apps-menu
+    - gnome-shell-extension-common
+    - gnome-shell-extension-launch-new-instance
+    - gnome-shell-extension-places-menu
+    - gnome-shell-extension-window-list
+    - gnome-software
+    - gnome-software-packagekit-plugin
+    - gnome-tour
+    - gnome-user-docs
+    - gnome-weather
+    - google-noto-sans-arabic-vf-fonts
+    - google-noto-sans-armenian-vf-fonts
+    - google-noto-sans-bengali-vf-fonts
+    - google-noto-sans-cjk-vf-fonts
+    - google-noto-sans-devanagari-vf-fonts
+    - google-noto-sans-ethiopic-vf-fonts
+    - google-noto-sans-georgian-vf-fonts
+    - google-noto-sans-gujarati-vf-fonts
+    - google-noto-sans-gurmukhi-vf-fonts
+    - google-noto-sans-hebrew-vf-fonts
+    - google-noto-sans-kannada-vf-fonts
+    - google-noto-sans-khmer-vf-fonts
+    - google-noto-sans-lao-vf-fonts
+    - google-noto-sans-malayalam-vf-fonts
+    - google-noto-sans-mono-cjk-vf-fonts
+    - google-noto-sans-naskh-arabic-vf-fonts
+    - google-noto-sans-oriya-vf-fonts
+    - google-noto-sans-tamil-vf-fonts
+    - google-noto-sans-telugu-vf-fonts
+    - google-noto-sans-thai-vf-fonts
+    - google-noto-serif-cjk-vf-fonts
+    - julietaula-montserrat-fonts
+    - madan-fonts
+    - mutter
+    - orca
+    - paktype-naskh-basic-fonts
+    - ptyxis
+    - rit-meera-new-fonts
+    - rit-rachana-fonts
+    - rygel
+    - seahorse
+    - sil-padauk-fonts
+    - stix-fonts
+    - totem
+...

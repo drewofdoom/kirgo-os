@@ -1,19 +1,18 @@
 name: bluebuild
 on:
   schedule:
-    - cron:
-        "00 06 * * *" # build at 06:00 UTC every day
-        # (20 minutes after last ublue images start building)
+    - cron: "00 10 */7 * *"
   push:
     paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"
-
   pull_request:
-  workflow_dispatch: # allow manually triggering builds
+  workflow_dispatch:
+
 concurrency:
   # only run one build at a time
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
   cancel-in-progress: true
+
 jobs:
   bluebuild:
     name: Build Custom Image
@@ -26,8 +25,8 @@ jobs:
       fail-fast: false # stop GH from cancelling all matrix builds if one fails
       matrix:
         recipe:
-          # !! Add your recipes here
-          - recipe.yml
+          # - kirgo.yml
+          - kirgo-nvidia-open.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image

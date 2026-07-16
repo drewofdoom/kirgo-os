@@ -1,0 +1,14 @@
+[Unit]
+Description=Add wheel users to realtime group
+DefaultDependencies=no
+Before=getty.target
+WantedBy=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/realtime-group-setup
+RemainAfterExit=yes
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target

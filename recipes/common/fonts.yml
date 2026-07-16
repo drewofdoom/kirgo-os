@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+---
+type: fonts
+fonts:
+  nerd-fonts:
+    - IBMPlexMono
+    - FiraCode
+  google-fonts:
+    - Inter
+    - Merriweather
+    - Open Sans
+...

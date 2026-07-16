@@ -1,0 +1,5 @@
+binds {
+    Mod+B hotkey-overlay-title="Default Web Browser: Open" { spawn "dms" "ipc" "call" "defaultApp" "browser"; }
+    Mod+E hotkey-overlay-title="Default File Manager: Open" { spawn "dms" "ipc" "call" "defaultApp" "fileManager"; }
+    Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
+}
