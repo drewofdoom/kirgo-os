@@ -29,6 +29,7 @@ install:
     - ghostty-terminfo
     - material-symbols-fonts
     - nautilus
+    - niri
     - papirus-icon-theme
     - podman-compose
     - podman-machine
@@ -42,24 +43,16 @@ install:
 remove:
   packages:
     - antiword
-    - blueberry
-    - cheese
     - epiphany-runtime
-    - evince
     - evolution-data-server
     - evolution-ews-core
     - evolution-ews-langpacks
     - gdm
     - gnome-bluetooth
     - gnome-color-manager
-    - gnome-connections
-    - gnome-contacts
     - gnome-control-center
     - gnome-disk-utility
     - gnome-initial-setup
-    - gnome-logs
-    - gnome-maps
-    - gnome-music
     - gnome-online-accounts
     - gnome-online-accounts-libs
     - gnome-remote-desktop
@@ -71,15 +64,10 @@ remove:
     - gnome-shell-extension-launch-new-instance
     - gnome-shell-extension-places-menu
     - gnome-shell-extension-window-list
-    - gnome-software
-    - gnome-software-packagekit-plugin
     - gnome-tour
     - gnome-user-docs
-    - gnome-weather
-    - google-noto-sans-arabic-vf-fonts
     - google-noto-sans-armenian-vf-fonts
     - google-noto-sans-bengali-vf-fonts
-    - google-noto-sans-cjk-vf-fonts
     - google-noto-sans-devanagari-vf-fonts
     - google-noto-sans-ethiopic-vf-fonts
     - google-noto-sans-georgian-vf-fonts
@@ -89,7 +77,6 @@ remove:
     - google-noto-sans-kannada-vf-fonts
     - google-noto-sans-khmer-vf-fonts
     - google-noto-sans-lao-vf-fonts
-    - google-noto-sans-malayalam-vf-fonts
     - google-noto-sans-mono-cjk-vf-fonts
     - google-noto-sans-naskh-arabic-vf-fonts
     - google-noto-sans-oriya-vf-fonts
@@ -106,8 +93,6 @@ remove:
     - rit-meera-new-fonts
     - rit-rachana-fonts
     - rygel
-    - seahorse
     - sil-padauk-fonts
     - stix-fonts
-    - totem
 ...
