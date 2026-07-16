@@ -14,13 +14,14 @@
 
 ## What's Different?
 
-| Category             | Bluefin               | Kirgo                |
-| -------------------- | --------------------- | -------------------- |
-| **Compositor**       | GNOME Shell           | Niri                 |
-| **Display Manager**  | GDM                   | greetd               |
-| **Fonts**            | Full multilingual set | English + emoji only |
-| **Apps**             | Full suite            | Essential apps only  |
-| **Shell Extensions** | GNOME extensions      | Dank Material Shell  |
+| Category            | Bluefin               | Kirgo                              |
+| ------------------- | --------------------- | ---------------------------------- |
+| **Compositor**      | GNOME Shell           | Niri                               |
+| **Display Manager** | GDM                   | greetd                             |
+| **Fonts**           | Full multilingual set | English + emoji only               |
+| **Apps**            | Full suite            | Essential apps only                |
+| **Shell**           | GNOME+extensions      | Dank Material Shell                |
+| **Kernel Options**  | Fedora defaults       | Full preemption and ntsync enabled |
 
 ---
 
@@ -28,7 +29,7 @@
 
 ### Prerequisites
 
-- Fedora Atomic desktop (Silverblue/Kinoite) or existing uBlue image
+- Fedora Atomic desktop (Silverblue/Kinoite) or existing uBlue image (Bluefin preferred)
 - `bootc` installed
 - Sufficient disk space (images are ~6–8 GB each)
 
@@ -110,20 +111,6 @@ env BASE_IMAGE=ghcr.io/ublue-os/bluefin-nvidia-open:stable IMAGE_NAME=kirgo-nvid
 | uBlue Template      | https://github.com/ublue-os/image-template |
 | Niri Compositor     | https://niri-wm.github.io/niri/            |
 | Dank Material Shell | https://danklinux.com                      |
-
-## Known Limitations
-
-1. No GNOME Shell Extensions — Workspace management is handled by Niri
-2. Limited Fonts — Only English and emoji fonts; add as needed
-3. XWayland — Required for Steam/Reaper/WINE; kept intentionally
-4. Rollback Window — Limited to 90 days (uBlue default)
-
-## Credits
-
-- Bluefin: https://github.com/ublue-os/bluefin — Rock-solid Fedora base
-- Universal Blue: https://universal-blue.org — Cloud-native Linux delivery
-- Niri: https://niri.surf — Tiling Wayland compositor
-- Malcolm and Jack: For showing that dinos and hardware go together
 
 ## License
 
