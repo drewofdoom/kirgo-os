@@ -1,0 +1,14 @@
+# /etc/systemd/system/load-ntsync.service
+[Unit]
+Description=Load ntsync kernel module
+DefaultDependencies=no
+Before=sysinit.target
+Wants=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/modprobe ntsync
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

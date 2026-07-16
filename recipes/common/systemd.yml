@@ -5,4 +5,7 @@ system:
   enabled:
     - greetd.service
     - podman.socket
+    - greeter-group-setup.service
+    - realtime-group-setup.service
+    - load-ntsync.service
 ...

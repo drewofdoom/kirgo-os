@@ -18,7 +18,5 @@ modules:
   - from-file: common/systemd.yml
   - from-file: common/scripts.yml
 
-  - type: initramfs
-
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 ...
