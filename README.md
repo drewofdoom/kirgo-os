@@ -18,7 +18,7 @@
 | ------------------- | ---------------- | ---------------------------------- |
 | **Compositor**      | GNOME Shell      | Niri                               |
 | **Display Manager** | GDM              | greetd                             |
-| **Shell**           | GNOME+extensions | Dank Material Shell                |
+| **Shell**           | GNOME+extensions | Noctalia                           |
 | **Kernel Options**  | Fedora defaults  | Full preemption and ntsync enabled |
 
 ---
@@ -102,13 +102,13 @@ env BASE_IMAGE=ghcr.io/ublue-os/bluefin-nvidia-open:stable IMAGE_NAME=kirgo-nvid
 
 ## Upstream Projects
 
-| Topic               | Resource                        |
-| ------------------- | ------------------------------- |
-| General Bluefin     | https://projectbluefin.io       |
-| uBlue Project       | https://universal-blue.org      |
-| BlueBuild           | https://blue-build.org          |
-| Niri Compositor     | https://niri-wm.github.io/niri/ |
-| Dank Material Shell | https://danklinux.com           |
+| Topic           | Resource                        |
+| --------------- | ------------------------------- |
+| General Bluefin | https://projectbluefin.io       |
+| uBlue Project   | https://universal-blue.org      |
+| BlueBuild       | https://blue-build.org          |
+| Niri Compositor | https://niri-wm.github.io/niri/ |
+| Noctalia        | https://noctalia.dev/           |
 
 ## License
 
