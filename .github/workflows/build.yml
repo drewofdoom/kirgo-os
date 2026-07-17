@@ -7,6 +7,8 @@ on:
   schedule:
     - cron: "0 4 * * TUE" # A few hours after bluefin-stable
   push:
+    branches:
+      - main
     paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"
   pull_request:
