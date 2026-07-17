@@ -1,11 +1,14 @@
 environment {
   XDG_CURRENT_DESKTOP "niri"
-  XCURSOR_SIZE "22"
+  XCURSOR_SIZE "14"
   ELECTRON_OZONE_PLATFORM_HINT "auto"
   QT_QPA_PLATFORM "wayland"
   QT_QPA_PLATFORMTHEME "gtk3"
   QT_QPA_PLATFORMTHEME_QT6 "gtk3"
+  EDITOR "zed --wait"
 }
+
+spawn-at-startup "noctalia"
 
 input {
     keyboard {
@@ -18,17 +21,44 @@ input {
         natural-scroll
     }
 
-    mouse {
+    trackpoint {
     }
 
     trackball {
         accel-speed 0.2
         accel-profile "adaptive"
     }
+
+    focus-follows-mouse max-scroll-amount="10%"
+}
+
+cursor {
+    xcursor-theme "Bibata-Original-Classic"
+    xcursor-size 22
+    hide-when-typing
 }
 
 layout {
     background-color "transparent"
+    gaps 16
+
+    border {
+        width 2
+    }
+
+    focus-ring {
+        width 2
+    }
+}
+
+recent-windows {
+    highlight {
+        corner-radius 12
+    }
+}
+
+hotkey-overlay {
+    skip-at-startup
 }
 
 prefer-no-csd
@@ -45,14 +75,45 @@ blur {
     saturation 1.5
 }
 
-layer-rule {
-    match namespace="^dms:clipboard$"
-    block-out-from "screencast"
+debug {
+  // Allows notification actions and window activation from Noctalia.
+  honor-xdg-activation-with-invalid-serial
 }
 
 layer-rule {
-    match namespace="^quickshell$"
-    place-within-backdrop true
+  match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+  background-effect {
+    xray false
+    // blur false
+  }
+}
+
+layer-rule {
+  match namespace="^noctalia-backdrop"
+  place-within-backdrop true
+}
+
+window-rule {
+  // Rounded corners for a modern look.
+  geometry-corner-radius 20
+
+  // Clips window contents to the rounded corner boundaries.
+  clip-to-geometry true
+}
+
+// Floating Noctalia settings window.
+window-rule {
+  match app-id="dev.noctalia.Noctalia"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+}
+
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+    tiled-state true
+    draw-border-with-background false
 }
 
 window-rule {
@@ -69,17 +130,6 @@ window-rule {
 }
 
 window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
-}
-
-// Open DMS windows as floating by default
-window-rule {
-    match app-id=r#"org.quickshell$"#
-    open-floating true
-}
-
-window-rule {
   match app-id="steam" title="^notificationtoasts_\\d+_desktop$"
   default-floating-position x=0 y=0 relative-to="bottom-right"
   open-focused false
@@ -87,68 +137,59 @@ window-rule {
 
 binds {
     // Application Launchers
+    Mod+B hotkey-overlay-title="Open Brave browser" {
+      spawn "flatpak" "run" "com.brave.Browser";
+    }
+    Mod+E hotkey-overlay-title="Open File Manager" {
+      spawn "nautilus";
+    }
+    Mod+T hotkey-overlay-title="Open a Terminal: ghostty" {
+      spawn "ghostty";
+    }
+    Alt+Ctrl+Shift+R hotkey-overlay-title="Start HDMI Capture" {
+      spawn "sh" "-c" "flatpak run io.mpv.Mpv av://v4l2:/dev/video1 --demuxer-lavf-o=video_size=1920x1080,framerate=60,input_format=yuyv422 --profile=low-latency --untimed --osc=no";
+    }
     Mod+Space hotkey-overlay-title="Application Launcher" {
-      spawn "dms" "ipc" "call" "spotlight" "toggle";
-    }
-    Mod+S hotkey-overlay-title="Spotlight Bar: Toggle" {
-      spawn "dms" "ipc" "call" "spotlight-bar" "toggle";
-    }
-    XF86Search hotkey-overlay-title="Spotlight Bar: Toggle" {
-      spawn "dms" "ipc" "call" "spotlight-bar" "toggle";
-    }
-    Mod+Shift+C hotkey-overlay-title="Clipboard: Toggle" {
-      spawn "dms" "ipc" "call" "clipboard" "toggle";
-    }
-    Mod+M hotkey-overlay-title="Task Manager" {
-      spawn "dms" "ipc" "call" "processlist" "focusOrToggle";
-    }
-    Mod+Comma hotkey-overlay-title="Settings" {
-      spawn "dms" "ipc" "call" "settings" "focusOrToggle";
-    }
-    Mod+N hotkey-overlay-title="Notification Center" {
-      spawn "dms" "ipc" "call" "notifications" "toggle";
-    }
-    Mod+Y hotkey-overlay-title="Browse Wallpapers" {
-      spawn "dms" "ipc" "call" "dankdash" "wallpaper";
+      spawn "noctalia" "msg" "panel-toggle" "launcher";
     }
 
     // Security
     Mod+Alt+L hotkey-overlay-title="Lock Screen" {
-      spawn "dms" "ipc" "call" "lock" "lock";
+      spawn "noctalia" "msg" "session" "lock";
     }
 
     // Audio Controls
     XF86AudioRaiseVolume allow-when-locked=true {
-      spawn "dms" "ipc" "call" "audio" "increment" "3";
+      spawn "noctalia" "msg" "volume-up";
     }
     XF86AudioLowerVolume allow-when-locked=true {
-      spawn "dms" "ipc" "call" "audio" "decrement" "3";
+      spawn "noctalia" "msg" "volume-down";
     }
     XF86AudioMute allow-when-locked=true {
-      spawn "dms" "ipc" "call" "audio" "mute";
+      spawn "noctalia" "msg" "volume-mute";
     }
     XF86AudioMicMute allow-when-locked=true hotkey-overlay-title="Microphone Mute Toggle" {
-      spawn "dms" "ipc" "call" "mic" "mute";
+      spawn "noctalia" "msg" "mic-mute";
     }
     XF86AudioNext allow-when-locked=true hotkey-overlay-title="Media: Next Track" {
-      spawn "dms" "ipc" "call" "mpris" "next";
+      spawn "noctalia" "msg" "media" "next";
     }
     XF86AudioPlay allow-when-locked=true hotkey-overlay-title="Media: Play/Pause" {
-      spawn "dms" "ipc" "call" "mpris" "playPause";
+      spawn "noctalia" "msg" "media" "toggle";
     }
     XF86AudioPrev allow-when-locked=true hotkey-overlay-title="Media: Previous Track" {
-      spawn "dms" "ipc" "call" "mpris" "previous";
+      spawn "noctalia" "msg" "media" "previous";
     }
     XF86AudioStop allow-when-locked=true hotkey-overlay-title="Media: Stop" {
-      spawn "dms" "ipc" "call" "mpris" "stop";
+      spawn "noctalia" "msg" "media" "stop";
     }
 
     // Brightness Controls
     XF86MonBrightnessUp allow-when-locked=true {
-        spawn "dms" "ipc" "call" "brightness" "increment" "5" "";
+        spawn "noctalia" "msg" "brightness-up";
     }
     XF86MonBrightnessDown allow-when-locked=true {
-        spawn "dms" "ipc" "call" "brightness" "decrement" "5" "";
+        spawn "noctalia" "msg" "brightness-down";
     }
 
     // Actions
@@ -414,18 +455,15 @@ binds {
 
     // Exit
     Ctrl+Alt+Delete {
-      spawn "dms" "ipc" "call" "powermenu" "toggle";
+      spawn "noctalia" "msg" "panel-toggle" "session";
     }
     Mod+Shift+E {
-      spawn "dms" "ipc" "call" "powermenu" "toggle";
+      spawn "noctalia" "msg" "panel-toggle" "session";
     }
 }
 
-// DMS Include Configs
-include "dms/outputs.kdl"
-include "dms/windowrules.kdl"
-include "dms/binds.kdl"
-include "dms/cursor.kdl"
-include "dms/colors.kdl"
-include "dms/layout.kdl"
-include "dms/alttab.kdl"
+// Put your custom stuff into separate files and link them here
+// include "windowrules.kdl"
+// include "outputs.kdl"
+
+include "noctalia.kdl"

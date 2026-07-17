@@ -7,8 +7,6 @@ repos:
   keys:
     - https://repos.fyralabs.com/terra44/key.asc
   copr:
-    - avengemedia/dms
-    - scottames/ghostty
     - ulysg/xwayland-satellite
 install:
   exclude:
@@ -17,37 +15,22 @@ install:
     - fuzzel
     - waybar
   packages:
-    - repo: updates
-      packages:
-        - qt6-qtbase
-        - qt6-qtbase-gui
     - ghostty
-    - adw-gtk3-theme
-    - matugen
     - bibata-cursor-theme
     - cava
-    - cliphist
-    - dankcalendar-git
-    - danksearch
-    - dgop
-    - dms
-    - dms-cli
-    - dms-greeter
     - ghostty-fish-completion
     - ghostty-nautilus
     - ghostty-shell-integration
     - ghostty-terminfo
-    - material-symbols-fonts
     - nautilus
+    - nwg-look
+    - noctalia
+    - noctalia-greeter
     - niri
     - papirus-icon-theme
     - podman-compose
     - podman-machine
     - podman-tui
-    - qt6-qtmultimedia
-    - quickshell
-    - xdg-desktop-portal-gnome
-    - xdg-desktop-portal-gtk
     - xwayland-run
     - xwayland-satellite
 remove:
