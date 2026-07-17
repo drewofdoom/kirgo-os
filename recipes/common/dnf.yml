@@ -15,22 +15,23 @@ install:
     - fuzzel
     - waybar
   packages:
-    - ghostty
     - bibata-cursor-theme
     - cava
+    - ghostty
     - ghostty-fish-completion
     - ghostty-nautilus
     - ghostty-shell-integration
     - ghostty-terminfo
     - nautilus
-    - nwg-look
+    - niri
     - noctalia
     - noctalia-greeter
-    - niri
+    - nwg-look
     - papirus-icon-theme
     - podman-compose
     - podman-machine
     - podman-tui
+    - qt6ct
     - xwayland-run
     - xwayland-satellite
 remove:

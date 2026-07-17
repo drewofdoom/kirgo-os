@@ -3,9 +3,8 @@ environment {
   XCURSOR_SIZE "14"
   ELECTRON_OZONE_PLATFORM_HINT "auto"
   QT_QPA_PLATFORM "wayland"
-  QT_QPA_PLATFORMTHEME "gtk3"
-  QT_QPA_PLATFORMTHEME_QT6 "gtk3"
-  EDITOR "zed --wait"
+  QT_QPA_PLATFORMTHEME "qt6ct"
+  QT_QPA_PLATFORMTHEME_QT6 "qt6ct"
 }
 
 spawn-at-startup "noctalia"
@@ -43,7 +42,7 @@ layout {
     gaps 16
 
     border {
-        width 2
+      off
     }
 
     focus-ring {
