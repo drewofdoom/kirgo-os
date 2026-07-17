@@ -135,8 +135,8 @@ window-rule {
 
 binds {
     // Application Launchers
-    Mod+B hotkey-overlay-title="Open Brave browser" {
-      spawn "flatpak" "run" "com.brave.Browser";
+    Mod+B hotkey-overlay-title="Open Firefox" {
+      spawn "flatpak" "run" "org.mozilla.firefox";
     }
     Mod+E hotkey-overlay-title="Open File Manager" {
       spawn "nautilus";
