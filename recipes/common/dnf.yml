@@ -31,6 +31,7 @@ install:
     - podman-compose
     - podman-machine
     - podman-tui
+    - util-linux
     - xwayland-run
     - xwayland-satellite
 remove:
