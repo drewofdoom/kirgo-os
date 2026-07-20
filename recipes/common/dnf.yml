@@ -22,6 +22,7 @@ install:
     - ghostty-nautilus
     - ghostty-shell-integration
     - ghostty-terminfo
+    - lan-mouse
     - nautilus
     - niri
     - noctalia
