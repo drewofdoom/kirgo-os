@@ -21,6 +21,7 @@ install:
     - ghostty-nautilus
     - ghostty-shell-integration
     - ghostty-terminfo
+    - firefox
     - lan-mouse
     - nautilus
     - niri
