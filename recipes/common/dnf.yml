@@ -8,6 +8,7 @@ repos:
     - https://repos.fyralabs.com/terra44/key.asc
   copr:
     - ulysg/xwayland-satellite
+    - imput/helium
 install:
   exclude:
     - swaylock
@@ -21,6 +22,7 @@ install:
     - ghostty-nautilus
     - ghostty-shell-integration
     - ghostty-terminfo
+    - helium-bin
     - firefox
     - lan-mouse
     - nautilus
