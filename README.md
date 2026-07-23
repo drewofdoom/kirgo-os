@@ -14,12 +14,13 @@
 
 ## What's Different?
 
-| Category            | Bluefin          | Kirgo                              |
-| ------------------- | ---------------- | ---------------------------------- |
-| **Compositor**      | GNOME Shell      | Niri                               |
-| **Display Manager** | GDM              | greetd                             |
-| **Shell**           | GNOME+extensions | Noctalia                           |
-| **Kernel Options**  | Fedora defaults  | Full preemption and ntsync enabled |
+| Category            | Bluefin              | Kirgo                              |
+| ------------------- | -------------------- | ---------------------------------- |
+| **Compositor**      | GNOME Shell          | Niri                               |
+| **Display Manager** | GDM                  | greetd                             |
+| **Shell**           | GNOME+extensions     | Noctalia                           |
+| **Kernel Options**  | Fedora defaults      | Full preemption and ntsync enabled |
+| **Browsers**        | Firefox from flatpak | Firefox and Helium from repos      |
 
 ---
 
@@ -31,9 +32,9 @@
 - `bootc` installed
 - Sufficient disk space (images are ~6–8 GB each)
 
-### Switching to Kirgo
+## Switching to Kirgo
 
-#### AMD/Intel Graphics (Main Build)
+### AMD/Intel Graphics (Main Build)
 
 ```bash
 ## AMD/Intel Graphics
@@ -47,7 +48,7 @@ bootc switch --transient ostree/container://ghcr.io/drewofdoom/kirgo:kirgo
 sudo bootc switch --enforce-container-sigpolicy ghcr.io/drewofdoom/kirgo
 ```
 
-#### NVIDIA Graphics (Open Source Driver)
+### NVIDIA Graphics (Open Source Driver)
 
 ```bash
 # Preview what will be installed
@@ -60,7 +61,7 @@ bootc switch --transient ostree/container://ghcr.io/drewofdoom/kirgo-nvidia-open
 sudo bootc switch --enforce-container-sigpolicy ghcr.io/drewofdoom/kirgo-nvidia-open
 ```
 
-#### Building Locally
+### Building Locally
 
 ```bash
 # Clone the repository
@@ -76,29 +77,57 @@ env BASE_IMAGE=ghcr.io/ublue-os/bluefin-nvidia-open:stable IMAGE_NAME=kirgo-nvid
 
 ## Customizing
 
-#### Layer additional packages
+### Layer additional packages
+
+_Not recommended for most applications. Use Flatpaks or brew instead._
 
 `rpm-ostree install <package-name>`
 
-#### Or use Flatpak for most applications
+### Or use Flatpak for most applications
 
 `flatpak install flathub <application>`
 
-#### Or install stuff with brew
+### Or install stuff with brew
 
 `brew install <package-name>`
 
-#### Remove layered packages
+### Remove layered packages
 
 `rpm-ostree uninstall <package-name>`
 
 - Note: Do not remove base system packages. Use Flatpaks for application changes.
 
-#### Updating to the latest image
+### Updating to the latest image
 
 `ujust update`
 
 - Automatic updates are handled by the uBlue update timer.
+
+### Recommendations
+
+#### Browsers
+
+It's recommended to remove the Firefox flatpak, which is default from Bluefin. Firefox and Helium are available from the repositories instead.
+
+While helium has an appimage, it doesn't integrate as easily as the native package, re: application icon and XDG settings. To set up Helium, simply switch to 'GTK' in Appearance settings.
+
+Similarly, Firefox theme integration will not work with the flatpak. It needs to be able to use native messaging, which is disabled by the sandbox. Enabling theming is a little bit more complex. First, install the [Pywalfox](https://github.com/Frewacom/pywalfox) extension. Second, set it up with `noctalia firefox-theme install` and enable the 'pywalfox-beta4' template in Noctalia's Template settings. You do not need to install `python-pywalfox`, as Noctalia v5 is the native messaging host as of beta 4.
+
+#### Themes
+
+Many useful fonts are installed by default. My personal preference is to install the following fronts from linuxbrew:
+
+```bash
+brew install inter font-maple-mono-nf
+brew install font-inter
+brew install font-merriweather
+```
+
+Then set 'Inter Variable' as the sans-serif font, 'Merriweather' as the serif font, and 'Maple Mono NF' as the monospace font. Optionally, set 'Maply Mono NF' as the interface font for the Noctalia UI. This gives a very clean, attractive, and consistent typography. Of course, other applications may need to be configured to use these fonts, as well (such as browsers and Ghostty).
+
+The intended icon theme is Papirus. Adwaita is also available. You may, of course, install your own icon themes in ~/.local/share/icons/ if you please.
+
+All of that said, your machine is _yours_. Customize it to your liking! I am specifically **not** setting any Noctalia defaults for you, and the expectation is that you will handle your own customizations. ❤️
 
 ## Upstream Projects
 
