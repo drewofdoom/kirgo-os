@@ -79,7 +79,9 @@ env BASE_IMAGE=ghcr.io/ublue-os/bluefin-nvidia-open:stable IMAGE_NAME=kirgo-nvid
 
 ### Layer additional packages
 
-_Not recommended for most applications. Use Flatpaks or brew instead._
+_n.b. Not recommended for most applications. Use Flatpaks or brew instead if you can!_
+
+_If you must use layered packages, consider forking this repo and modifying the configuration to your suit your needs._
 
 `rpm-ostree install <package-name>`
 
@@ -90,12 +92,6 @@ _Not recommended for most applications. Use Flatpaks or brew instead._
 ### Or install stuff with brew
 
 `brew install <package-name>`
-
-### Remove layered packages
-
-`rpm-ostree uninstall <package-name>`
-
-- Note: Do not remove base system packages. Use Flatpaks for application changes.
 
 ### Updating to the latest image
 
