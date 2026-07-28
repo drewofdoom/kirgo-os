@@ -17,6 +17,7 @@ install:
     - waybar
   packages:
     - bibata-cursor-theme
+    - gamescope
     - ghostty
     - ghostty-fish-completion
     - ghostty-nautilus
