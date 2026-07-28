@@ -40,7 +40,6 @@ install:
 remove:
   auto-remove: true
   packages:
-    - antiword
     - epiphany-runtime
     - evolution-data-server
     - evolution-ews-core

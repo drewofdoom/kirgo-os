@@ -63,16 +63,18 @@ sudo bootc switch --enforce-container-sigpolicy ghcr.io/drewofdoom/kirgo-nvidia-
 
 ### Building Locally
 
+_You must install [bluebuild](https://github.com/blue-build/cli) to build locally._
+
 ```bash
 # Clone the repository
 git clone https://github.com/drewofdoom/kirgo.git
 cd kirgo
 
 # Build AMD/Intel variant
-env BASE_IMAGE=ghcr.io/ublue-os/bluefin:stable IMAGE_NAME=kirgo DEFAULT_TAG=latest just build
+bluebuild build ./recipes/kirgo.yml
 
 # Build NVIDIA variant
-env BASE_IMAGE=ghcr.io/ublue-os/bluefin-nvidia-open:stable IMAGE_NAME=kirgo-nvidia-open DEFAULT_TAG=latest just build
+bluebuild build ./recipes/kirgo-nvidia-open.yml
 ```
 
 ## Customizing
