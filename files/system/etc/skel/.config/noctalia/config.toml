@@ -1,0 +1,182 @@
+# Noctalia configuration for kirgo-os
+# This file is copied to ~/.config/noctalia/config.toml for new users
+
+[theme]
+# Enable the noctalia theme (dark mode with noctalia colors)
+mode = "dark"
+
+# Template configuration - enables noctalia themes for installed applications
+[theme.templates]
+# Enable builtin templates for applications installed in the base image
+enable_builtin_templates = true
+
+# List of template IDs to enable (from noctalia theme --list-templates)
+# Enabled for packages installed in the base image:
+# - ghostty (terminal)
+# - gtk3, gtk4 (GTK apps: nautilus, firefox, nwg-look, etc.)
+# - niri (compositor)
+# - qt (Qt applications)
+# - starship (shell prompt - commonly used)
+# - firefox (handled via post_action in template)
+builtin_ids = [
+  "ghostty",
+  "gtk3",
+  "gtk4",
+  "niri",
+  "qt",
+  "starship",
+]
+
+# Community templates (from api.noctalia.dev/templates) - disabled by default
+enable_community_templates = false
+community_ids = []
+
+# Apply templates on startup and theme changes
+apply_on_startup = true
+apply_on_theme_change = true
+
+# Theme mode (dark/light/auto) - synced with compositor theme
+mode = "dark"
+
+# Color palette generation
+[theme.palette]
+# Generate colors from wallpaper (when available)
+source = "wallpaper"
+# Material You color scheme variant
+variant = "tonal_spot"
+
+# Wallpaper settings
+[wallpaper]
+# Use noctalia's built-in wallpaper as default
+mode = "fill"
+# directory = "~/Pictures/Wallpapers"
+
+# Bar configuration
+[bar.main]
+position = "top"
+thickness = 34
+background_opacity = 0.95
+radius = 12
+margin_ends = 180
+margin_edge = 10
+padding = 14
+widget_spacing = 6
+shadow = true
+reserve_space = true
+
+start = ["launcher", "wallpaper", "workspaces"]
+center = ["clock"]
+end = [
+  "media",
+  "tray",
+  "notifications",
+  "clipboard",
+  "network",
+  "bluetooth",
+  "volume",
+  "brightness",
+  "battery",
+  "control-center",
+  "session"
+]
+
+# Dock configuration (disabled by default, user can enable)
+[dock]
+enabled = false
+position = "bottom"
+icon_size = 48
+background_opacity = 0.88
+radius = 16
+shadow = true
+show_running = true
+auto_hide = false
+reserve_space = true
+active_monitor_only = false
+pinned = []
+
+# Launcher configuration
+[widget.launcher]
+# Use noctalia's built-in application launcher
+
+# Notifications
+[widget.notifications]
+hide_when_no_unread = true
+
+# Control Center shortcuts
+[[control_center.shortcuts]]
+type = "wifi"
+[[control_center.shortcuts]]
+type = "bluetooth"
+[[control_center.shortcuts]]
+type = "nightlight"
+[[control_center.shortcuts]]
+type = "notification"
+[[control_center.shortcuts]]
+type = "wallpaper"
+[[control_center.shortcuts]]
+type = "screen_recorder"
+[[control_center.shortcuts]]
+type = "session"
+
+# Idle behavior
+[idle.behavior.lock]
+timeout = 600
+action = "lock"
+enabled = true
+
+[idle.behavior.screen-off]
+timeout = 660
+action = "screen_off"
+enabled = true
+
+# Keybinds for noctalia panels
+[keybinds]
+validate = ["return", "kp_enter", "space"]
+cancel = ["escape"]
+left = ["left"]
+right = ["right"]
+up = ["up"]
+down = ["down"]
+tab_next = ["tab"]
+tab_previous = ["shift+iso_left_tab"]
+delete = ["del"]
+
+# Hooks for theme changes
+[hooks]
+colors_changed = "noctalia theme apply"
+theme_mode_changed = "notify-send 'Noctalia' \"Theme mode: $NOCTALIA_THEME_MODE\""
+
+# Niri compositor integration
+[compositor.niri]
+# Enable niri-specific features
+workspace_integration = true
+window_integration = true
+
+# Session management
+[session]
+lock_command = "noctalia msg session lock"
+logout_command = "noctalia msg session logout"
+reboot_command = "noctalia msg session reboot"
+shutdown_command = "noctalia msg session shutdown"
+
+# Sounds
+[sounds]
+enable_sounds = true
+sound_volume = 0.5
+volume_change_sound = ""
+notification_sound = ""
+
+# Brightness
+[brightness]
+enable_ddcutil = false
+
+# Night light
+[nightlight]
+enabled = true
+force = false
+temperature_day = 6500
+temperature_night = 4000
+
+# Location (for night light, weather, theme auto-mode)
+[location]
+auto_locate = true

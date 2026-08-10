@@ -1,0 +1,100 @@
+# Ghostty configuration for kirgo-os
+# The noctalia theme will be applied automatically by noctalia
+# Theme file location: ~/.config/ghostty/themes/noctalia
+
+# Window settings
+window-decorations = "buttonless"
+window-title = "ghostty"
+window-save-state = "always"
+window-inherit-font-size = true
+window-inherit-working-directory = true
+
+# Font settings
+font-family = "JetBrainsMono Nerd Font"
+font-size = 12
+font-feature = "+liga"
+font-feature = "+calt"
+
+# Shell
+shell-integration = "auto"
+shell-integration-no-cursor = true
+
+# Cursor
+cursor-style = "block"
+cursor-blink = true
+cursor-blink-interval = 530
+
+# Scrollback
+scrollback-lines = 10000
+
+# Mouse
+mouse-hide-while-typing = true
+
+# Clipboard
+clipboard-read = "clipboard"
+clipboard-write = "clipboard"
+
+# Selection
+selection-word-boundary = " \t\n\"'`@$*<>[]{}|"
+
+# Background opacity (niri handles blur)
+background-opacity = 0.95
+
+# Theme - noctalia will generate ~/.config/ghostty/themes/noctalia
+# and we include it here. The theme file is created by noctalia's template system.
+# You can also use: theme = "noctalia"
+# Or let noctalia manage it via its apply.sh post_hook
+
+# Keybinds (ghostty defaults + some additions)
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard
+keybind = ctrl+shift+f=find
+keybind = ctrl+shift+u=scrollback_up_page
+keybind = ctrl+shift+d=scrollback_down_page
+
+# New tab/window
+keybind = ctrl+shift+t=new_tab
+keybind = ctrl+shift+n=new_window
+keybind = ctrl+shift+w=close_tab
+
+# Split pane
+keybind = ctrl+shift+Right=split_right
+keybind = ctrl+shift+Down=split_bottom
+keybind = ctrl+shift+Left=split_left
+keybind = ctrl+shift+Up=split_top
+
+# Navigation
+keybind = ctrl+shift+h=move_pane_left
+keybind = ctrl+shift+j=move_pane_down
+keybind = ctrl+shift+k=move_pane_up
+keybind = ctrl+shift+l=move_pane_right
+
+# Resize pane
+keybind = ctrl+shift+alt+h=resize_pane_left
+keybind = ctrl+shift+alt+j=resize_pane_down
+keybind = ctrl+shift+alt+k=resize_pane_up
+keybind = ctrl+shift+alt+l=resize_pane_right
+
+# Tab navigation
+keybind = ctrl+shift+page_up=previous_tab
+keybind = ctrl+shift+page_down=next_tab
+keybind = ctrl+page_up=previous_tab
+keybind = ctrl+page_down=next_tab
+keybind = alt+1=goto_tab_1
+keybind = alt+2=goto_tab_2
+keybind = alt+3=goto_tab_3
+keybind = alt+4=goto_tab_4
+keybind = alt+5=goto_tab_5
+keybind = alt+6=goto_tab_6
+keybind = alt+7=goto_tab_7
+keybind = alt+8=goto_tab_8
+keybind = alt+9=goto_tab_9
+
+# Font size
+keybind = ctrl+plus=increase_font_size
+keybind = ctrl+minus=decrease_font_size
+keybind = ctrl+0=reset_font_size
+
+# Toggle fullscreen
+keybind = f11=toggle_fullscreen
+keybind = ctrl+shift+f11=toggle_simple_fullscreen
