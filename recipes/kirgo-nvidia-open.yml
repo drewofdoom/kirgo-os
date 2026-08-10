@@ -10,7 +10,7 @@ base-image: ghcr.io/ublue-os/bluefin-nvidia-open
 image-version: stable # latest is also supported if you want new updates ASAP
 
 labels:
-  org.opencontainers.image.description: Kirgo OS based on Bluefin modified with DMS and Niri
+  org.opencontainers.image.description: Kirgo OS based on Bluefin modified with Niri and Noctalia
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
