@@ -113,7 +113,7 @@ Similarly, Firefox theme integration will not work with the flatpak. It needs to
 
 #### Themes
 
-Many useful fonts are installed by default. My personal preference is to install the following fronts from linuxbrew:
+Many useful fonts are installed by default. My personal preference is to install the following fonts from linuxbrew:
 
 ```bash
 brew install inter font-maple-mono-nf
