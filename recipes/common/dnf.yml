@@ -6,8 +6,6 @@ repos:
     - "https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo"
   keys:
     - https://repos.fyralabs.com/terra44/key.asc
-  copr:
-    - ulysg/xwayland-satellite
 install:
   exclude:
     - swaylock
