@@ -37,6 +37,8 @@ install:
     - ghostty-nautilus
     - ghostty-shell-integration
     - ghostty-terminfo
+    # Browser
+    - firefox
 remove:
   auto-remove: true
   packages:
