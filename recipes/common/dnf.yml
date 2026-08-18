@@ -13,28 +13,31 @@ install:
     - fuzzel
     - waybar
   packages:
+    # Noctalia/Niri
+    - niri
+    - noctalia
+    - noctalia-greeter
+    - xwayland-run
+    - xwayland-satellite
+    # Theme
     - bibata-cursor-theme
+    - nwg-look
+    - papirus-icon-theme
+    # Utilities
     - gamescope
+    - lan-mouse
+    - lsp-plugins-ladspa
+    - nautilus
+    - rnnoise
+    - podman-compose
+    - podman-machine
+    - podman-tui
+    # Terminal
     - ghostty
     - ghostty-fish-completion
     - ghostty-nautilus
     - ghostty-shell-integration
     - ghostty-terminfo
-    - lan-mouse
-    - lsp-plugins-ladspa
-    - nautilus
-    - niri
-    - noctalia
-    - noctalia-greeter
-    - noise-suppression-for-voice
-    - nwg-look
-    - papirus-icon-theme
-    - podman-compose
-    - podman-machine
-    - podman-tui
-    - rnnoise
-    - xwayland-run
-    - xwayland-satellite
 remove:
   auto-remove: true
   packages:
