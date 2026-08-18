@@ -101,32 +101,6 @@ _If you must use layered packages, consider forking this repo and modifying the 
 
 - Automatic updates are handled by the uBlue update timer.
 
-### Recommendations
-
-#### Browsers
-
-It's recommended to remove the Firefox flatpak, which is default from Bluefin. Firefox and Helium are available from the repositories instead.
-
-While helium has an appimage, it doesn't integrate as easily as the native package, re: application icon and XDG settings. To set up Helium, simply switch to 'GTK' in Appearance settings.
-
-Similarly, Firefox theme integration will not work with the flatpak. It needs to be able to use native messaging, which is disabled by the sandbox. Enabling theming is a little bit more complex. First, install the [Pywalfox](https://github.com/Frewacom/pywalfox) extension. Second, set it up with `noctalia firefox-theme install` and enable the 'pywalfox-beta4' template in Noctalia's Template settings. You do not need to install `python-pywalfox`, as Noctalia v5 is the native messaging host as of beta 4.
-
-#### Themes
-
-Many useful fonts are installed by default. My personal preference is to install the following fonts from linuxbrew:
-
-```bash
-brew install inter font-maple-mono-nf
-brew install font-inter
-brew install font-merriweather
-```
-
-Then set 'Inter Variable' as the sans-serif font, 'Merriweather' as the serif font, and 'Maple Mono NF' as the monospace font. Optionally, set 'Maply Mono NF' as the interface font for the Noctalia UI. This gives a very clean, attractive, and consistent typography. Of course, other applications may need to be configured to use these fonts, as well (such as browsers and Ghostty).
-
-The intended icon theme is Papirus. Adwaita is also available. You may, of course, install your own icon themes in ~/.local/share/icons/ if you please.
-
-All of that said, your machine is _yours_. Customize it to your liking! I am specifically **not** setting any Noctalia defaults for you, and the expectation is that you will handle your own customizations. ❤️
-
 ## Upstream Projects
 
 | Topic           | Resource                        |
