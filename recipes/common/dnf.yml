@@ -39,6 +39,7 @@ install:
     - ghostty-terminfo
     # Browser
     - firefox
+    - helium-browser-bin
 remove:
   auto-remove: true
   packages:
