@@ -15,6 +15,7 @@ install:
   packages:
     # Noctalia/Niri
     - niri
+    - nirius
     - noctalia
     - noctalia-greeter
     - xwayland-run
@@ -26,7 +27,6 @@ install:
     # Utilities
     - gamescope
     - nautilus
-    - rnnoise
     - podman-compose
     - podman-machine
     - podman-tui
@@ -36,9 +36,6 @@ install:
     - ghostty-nautilus
     - ghostty-shell-integration
     - ghostty-terminfo
-    # Browser
-    - firefox
-    - helium-browser-bin
 remove:
   auto-remove: true
   packages:
