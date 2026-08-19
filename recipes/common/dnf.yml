@@ -18,12 +18,9 @@ install:
     - nirius
     - noctalia
     - noctalia-greeter
+    - nwg-look
     - xwayland-run
     - xwayland-satellite
-    # Theme
-    - bibata-cursor-theme
-    - nwg-look
-    - papirus-icon-theme
     # Utilities
     - gamescope
     - nautilus
