@@ -25,7 +25,6 @@ install:
     - papirus-icon-theme
     # Utilities
     - gamescope
-    - lsp-plugins-ladspa
     - nautilus
     - rnnoise
     - podman-compose
