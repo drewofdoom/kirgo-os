@@ -13,12 +13,14 @@ install:
     - fuzzel
     - waybar
   packages:
-    # Noctalia/Niri
+    # Noctalia, Niri, and Umbriel (experimental)
     - niri
     - nirius
     - noctalia
     - noctalia-greeter
     - nwg-look
+    - umbriel-nightly
+    - xdg-desktop-portal-umbriel-nightly
     - xwayland-run
     - xwayland-satellite
     # Utilities
