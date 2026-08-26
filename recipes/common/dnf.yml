@@ -29,6 +29,7 @@ install:
     - podman-compose
     - podman-machine
     - podman-tui
+    - VK_hdr_layer
     # Terminal
     - ghostty
     - ghostty-fish-completion
