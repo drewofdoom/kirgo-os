@@ -30,6 +30,8 @@ install:
     - podman-machine
     - podman-tui
     - VK_hdr_layer
+    - vulkan-tools
+    - unrar
     # Terminal
     - ghostty
     - ghostty-fish-completion
