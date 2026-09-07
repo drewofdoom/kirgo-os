@@ -31,6 +31,7 @@ install:
     - podman-tui
     - VK_hdr_layer
     - vulkan-tools
+    - libunrar
     - unrar
     # Terminal
     - ghostty
