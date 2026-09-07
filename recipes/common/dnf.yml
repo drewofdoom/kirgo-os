@@ -13,26 +13,20 @@ install:
     - fuzzel
     - waybar
   packages:
-    # Noctalia, Niri, and Umbriel (experimental)
+    # Noctalia, Niri
     - niri
-    - nirius
     - noctalia
     - noctalia-greeter
     - nwg-look
-    - umbriel-nightly
-    - xdg-desktop-portal-umbriel-nightly
     - xwayland-run
     - xwayland-satellite
     # Utilities
-    - gamescope
     - nautilus
     - podman-compose
     - podman-machine
     - podman-tui
     - VK_hdr_layer
     - vulkan-tools
-    - libunrar
-    - unrar
     # Terminal
     - ghostty
     - ghostty-fish-completion
