@@ -5,8 +5,7 @@ permissions:
 
 on:
   schedule:
-    # - cron: "0 4 * * TUE" # A few hours after bluefin-stable
-    - cron: "0 4 * * *" # build daily while umbriel is in high activity
+    - cron: "0 4 * * TUE" # A few hours after bluefin-stable
   push:
     branches:
       - main
