@@ -4,8 +4,8 @@ permissions:
   packages: write
 
 on:
-  schedule:
-    - cron: "0 4 * * TUE" # A few hours after bluefin-stable
+  #schedule:
+  #  - cron: "0 4 * * TUE" # A few hours after bluefin-stable
   push:
     branches:
       - main
