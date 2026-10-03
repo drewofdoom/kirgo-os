@@ -15,7 +15,7 @@ install:
     - fuzzel
     - waybar
   packages:
-    # Noctalia, Umbriel
+    # noctalia.dev
     - umbriel-nightly
     - noctalia
     - noctalia-greeter
@@ -48,6 +48,15 @@ install:
     - steam
     - gamemode
     - gamescope
+    # Misc
+    - pipewire
+    - wireplumber
+    - pipewire-pulseaudio
+    - gtk4
+    - libadwaita
+    - python3-gobject
+    - python3-numpy
+    - python3-soundfile
 remove:
   auto-remove: true
   packages:
