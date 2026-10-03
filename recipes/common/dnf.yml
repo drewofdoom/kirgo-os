@@ -6,6 +6,8 @@ repos:
     - "https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo"
   keys:
     - https://repos.fyralabs.com/terra44/key.asc
+  copr:
+    - patrickl/wine-tkg
 install:
   exclude:
     - swaylock
@@ -13,11 +15,10 @@ install:
     - fuzzel
     - waybar
   packages:
-    # Noctalia, Niri
-    - niri
+    # Noctalia, Umbriel
+    - umbriel-nightly
     - noctalia
     - noctalia-greeter
-    - nwg-look
     - xwayland-run
     - xwayland-satellite
     # Utilities
@@ -27,12 +28,26 @@ install:
     - podman-tui
     - VK_hdr_layer
     - vulkan-tools
+    - zed
     # Terminal
     - ghostty
     - ghostty-fish-completion
     - ghostty-nautilus
     - ghostty-shell-integration
     - ghostty-terminfo
+    # WINE for Pro Audio
+    - libcurl-gnutls
+    - pipeasio
+    - wine
+    - wine-dxvk
+    - wine-mono
+    - winetricks
+    - yabridge
+    - yabridge-tui
+    # Gaming
+    - steam
+    - gamemode
+    - gamescope
 remove:
   auto-remove: true
   packages:
