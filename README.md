@@ -16,11 +16,11 @@
 
 | Category            | Bluefin              | Kirgo                              |
 | ------------------- | -------------------- | ---------------------------------- |
-| **Compositor**      | GNOME Shell          | Niri                               |
-| **Display Manager** | GDM                  | greetd                             |
+| **Compositor**      | GNOME Shell          | Umbriel                             |
+| **Display Manager** | GDM                   | greetd                             |
 | **Shell**           | GNOME+extensions     | Noctalia                           |
 | **Kernel Options**  | Fedora defaults      | Full preemption and ntsync enabled |
-| **Browsers**        | Firefox from flatpak | Firefox and Helium from repos      |
+| **Browsers**        | Firefox from flatpak | None — your choice, via flatpak    |
 
 ---
 
@@ -108,7 +108,7 @@ _If you must use layered packages, consider forking this repo and modifying the 
 | General Bluefin | https://projectbluefin.io       |
 | uBlue Project   | https://universal-blue.org      |
 | BlueBuild       | https://blue-build.org          |
-| Niri Compositor | https://niri-wm.github.io/niri/ |
+| Umbriel Compositor | https://github.com/noctalia-dev/umbriel |
 | Noctalia        | https://noctalia.dev/           |
 
 ## License
