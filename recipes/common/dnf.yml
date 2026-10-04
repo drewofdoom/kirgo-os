@@ -29,6 +29,9 @@ install:
     - VK_hdr_layer
     - vulkan-tools
     - zed
+    # Cursor theme (bundles all Bibata variants; active one is selected via
+    # org.gnome.desktop.interface cursor-theme, currently Bibata-Modern-Ice)
+    - bibata-cursor-theme
     # Terminal
     - ghostty
     - ghostty-fish-completion
