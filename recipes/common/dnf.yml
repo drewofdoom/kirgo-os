@@ -35,6 +35,12 @@ install:
     - ghostty-nautilus
     - ghostty-shell-integration
     - ghostty-terminfo
+    # Shell utilities and system monitors
+    - btop
+    - duf
+    - ncdu
+    - tldr
+    - zoxide
     # WINE for Pro Audio
     - libcurl-gnutls
     - pipeasio
