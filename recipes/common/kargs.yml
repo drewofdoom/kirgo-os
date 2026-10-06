@@ -4,4 +4,5 @@ type: kargs
 arch: x86_64
 kargs:
   - preempt=full
+  - mitigations=off
 ...
