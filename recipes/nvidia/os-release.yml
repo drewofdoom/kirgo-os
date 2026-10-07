@@ -1,12 +1,12 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+# yaml-language-server: $schema=https://schema.blue-build.org/modules/os-release-v1.json
 ---
 type: os-release
 properties:
   ID: kirgo
   NAME: Kirgo
   PRETTY_NAME: Kirgo
-  VARIANT_ID: kirgo
-  IMAGE_ID: kirgo
+  VARIANT_ID: kirgo-nvidia-open
+  IMAGE_ID: kirgo-nvidia-open
   DEFAULT_HOSTNAME: kirgo
   HOME_URL: https://github.com/drewofdoom/kirgo-os
   DOCUMENTATION_URL: https://github.com/drewofdoom/kirgo-os

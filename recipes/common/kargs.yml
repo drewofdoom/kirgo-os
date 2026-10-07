@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+# yaml-language-server: $schema=https://schema.blue-build.org/modules/kargs-v1.json
 ---
 type: kargs
 arch: x86_64

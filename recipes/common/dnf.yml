@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+# yaml-language-server: $schema=https://schema.blue-build.org/modules/dnf-latest.json
 ---
 type: dnf
 repos:
@@ -47,19 +47,10 @@ install:
     - winetricks
     - yabridge
     - yabridge-tui
-    # Gaming
-    - steam
-    - gamemode
-    - gamescope
     # Misc
     - pipewire
     - wireplumber
     - pipewire-pulseaudio
-    - gtk4
-    - libadwaita
-    - python3-gobject
-    - python3-numpy
-    - python3-soundfile
 remove:
   auto-remove: true
   packages:
