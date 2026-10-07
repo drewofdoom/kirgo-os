@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/modules/dnf-latest.json
+---
+type: dnf
+install:
+  packages:
+    # Gaming
+    - steam
+    - gamemode
+    - gamescope
+    - lutris
+    - heroic-games-launcher
+...
