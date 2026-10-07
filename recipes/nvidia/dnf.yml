@@ -9,4 +9,8 @@ install:
     - gamescope
     - lutris
     - heroic-games-launcher
+    - retroarch
+    - retroarch-assets
+    - retroarch-database
+    - retroarch-filters
 ...
