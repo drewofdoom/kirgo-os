@@ -51,7 +51,6 @@ install:
     - pipewire
     - wireplumber
     - pipewire-pulseaudio
-    - equibop
 remove:
   auto-remove: true
   packages:
