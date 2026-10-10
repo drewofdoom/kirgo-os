@@ -1,0 +1,12 @@
+[Unit]
+Description=Noctalia Greeter system setup
+After=local-fs.target sysusers.service
+Before=greetd.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/share/noctalia-greeter/setup_greeter_system.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
