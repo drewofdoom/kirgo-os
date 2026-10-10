@@ -4,6 +4,7 @@ type: systemd
 system:
   enabled:
     - greetd.service
+    - noctalia-greeter-setup.service
     - podman.socket
     - load-ntsync.service
 ...
