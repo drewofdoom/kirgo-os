@@ -33,7 +33,6 @@ install:
     - zed
     # Desktop
     - bibata-cursor-theme
-    - equibop
     # Terminal
     - ghostty
     - ghostty-fish-completion
