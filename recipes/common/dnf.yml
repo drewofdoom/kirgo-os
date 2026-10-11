@@ -22,6 +22,7 @@ install:
     - xwayland-run
     - xwayland-satellite
     # Utilities
+    - arrpc
     - nautilus
     - podman-compose
     - podman-machine
