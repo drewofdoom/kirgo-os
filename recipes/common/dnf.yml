@@ -23,6 +23,7 @@ install:
     - xwayland-satellite
     # Utilities
     - arrpc
+    - gamemode
     - nautilus
     - podman-compose
     - podman-machine
