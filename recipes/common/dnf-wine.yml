@@ -6,6 +6,9 @@
 
 ---
 type: dnf
+repos:
+  copr:
+    - patrickl/wine-staging-dev
 install:
   packages:
     - boost

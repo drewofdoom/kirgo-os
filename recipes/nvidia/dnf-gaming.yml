@@ -12,11 +12,11 @@ install:
         - steam
         - heroic-games-launcher
 
-    # Steam 64-bit dependencies
+    # Steam 64-bit dependencies (from Fedora)
     - libnsl
     - steam-devices
 
-    # Steam 32-bit dependencies
+    # Steam 32-bit dependencies (from Fedora)
     - NetworkManager-libnm.i686
     - SDL3.i686
     - bzip2-libs.i686

@@ -5,7 +5,6 @@ repos:
   files:
     - "https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo"
   copr:
-    - patrickl/wine-staging-dev
     - imput/helium
   keys:
     - https://repos.fyralabs.com/terra44/key.asc
