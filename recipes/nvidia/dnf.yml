@@ -8,6 +8,5 @@ install:
     - gamemode
     - gamescope
     - heroic-games-launcher
-    - vesktop
     - lutris
 ...

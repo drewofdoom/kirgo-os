@@ -23,19 +23,17 @@ install:
     - noctalia-greeter
     - xorg-x11-server-Xwayland
     # Utilities
-    - arrpc
-    - gamemode
-    - nautilus
     - podman-compose
     - podman-machine
     - podman-tui
     - vulkan-tools
-    - zed
     # Desktop
     - bibata-cursor-theme
     - helium-bin
     - vesktop
     - telegram-desktop
+    - nautilus
+    - zed
     # Terminal
     - ghostty
     - ghostty-fish-completion
