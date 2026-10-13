@@ -41,14 +41,16 @@ install:
     - ghostty-shell-integration
     - ghostty-terminfo
     # WINE for Pro Audio
-    - libcurl-gnutls
-    - pipeasio
-    - wine
-    - wine-dxvk
-    - wine-mono
-    - winetricks
-    - yabridge
-    - yabridge-tui
+    - repo: copr:copr.fedorainfracloud.org:patrickl:wine-staging-dev.repo
+      packages:
+        - libcurl-gnutls
+        - pipeasio
+        - wine
+        - wine-dxvk
+        - wine-mono
+        - winetricks
+        - yabridge
+        - yabridge-tui
     # Misc
     - pipewire
     - wireplumber
