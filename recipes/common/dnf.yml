@@ -4,12 +4,11 @@ type: dnf
 repos:
   files:
     - "https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo"
-    - "https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo"
   copr:
     - patrickl/wine-staging-dev
+    - imput/helium
   keys:
     - https://repos.fyralabs.com/terra44/key.asc
-    - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
   nonfree: rpmfusion
 install:
   exclude:
@@ -34,7 +33,7 @@ install:
     - zed
     # Desktop
     - bibata-cursor-theme
-    - liberation-fonts-all
+    - helium-bin
     # Terminal
     - ghostty
     - ghostty-fish-completion
@@ -54,10 +53,6 @@ install:
     - pipewire
     - wireplumber
     - pipewire-pulseaudio
-    # Brave
-    - repo: brave-browser
-      packages:
-        - brave-browser
 remove:
   auto-remove: true
   packages:
