@@ -20,7 +20,7 @@ modules:
   - from-file: common/kargs.yml
   - from-file: common/dnf.yml
   - from-file: common/dnf-wine.yml
-  - from-file: common/dnf-gaming.yml
+  - from-file: nvidia/dnf-gaming.yml
   - from-file: common/flatpak.yml
   - from-file: common/systemd.yml
 

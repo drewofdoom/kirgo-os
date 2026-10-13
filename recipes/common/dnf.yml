@@ -34,7 +34,9 @@ install:
     - bibata-cursor-theme
     - helium-bin
     - vesktop
-    - zed
+    - repo: terra
+      packages:
+        - zed
 remove:
   auto-remove: true
   packages:
