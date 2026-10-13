@@ -34,6 +34,7 @@ install:
     - zed
     # Desktop
     - bibata-cursor-theme
+    - liberation-fonts-all
     # Terminal
     - ghostty
     - ghostty-fish-completion
