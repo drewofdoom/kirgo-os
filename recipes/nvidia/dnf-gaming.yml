@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/modules/dnf-v1.json
+---
+type: dnf
+install:
+  packages:
+    # Lutris (from Fedora)
+    - lutris
+
+    # Steam and Heroic (from Terra)
+    - repo: terra
+      packages:
+        - steam
+        - heroic-games-launcher
+
+    # Steam 64-bit dependencies
+    - libnsl
+    - steam-devices
+
+    # Steam 32-bit dependencies
+    - NetworkManager-libnm.i686
+    - SDL3.i686
+    - bzip2-libs.i686
+    - fontconfig.i686
+    - glibc.i686
+    - libICE.i686
+    - libXext.i686
+    - libXinerama.i686
+    - libXtst.i686
+    - libatomic.i686
+    - libdrm.i686
+    - libglvnd-glx.i686
+    - libnsl.i686
+    - libva.i686
+    - libvdpau.i686
+    - mesa-dri-drivers.i686
+    - mesa-libGL.i686
+    - mesa-vulkan-drivers.i686
+    - nss.i686
+    - openal-soft.i686
+    - pipewire-libs.i686
+    - pulseaudio-libs.i686
+    - vulkan-loader.i686
+...

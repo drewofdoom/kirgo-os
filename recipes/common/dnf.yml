@@ -9,52 +9,32 @@ repos:
     - imput/helium
   keys:
     - https://repos.fyralabs.com/terra44/key.asc
-  nonfree: rpmfusion
 install:
-  exclude:
-    - swaylock
-    - alacritty
-    - fuzzel
-    - waybar
   packages:
     # noctalia.dev
+    # Umbriel (Window Manager), Noctalia (Shell), and greeter
     - umbriel-nightly
     - noctalia
     - noctalia-greeter
-    - xorg-x11-server-Xwayland
+
     # Utilities
     - podman-compose
     - podman-machine
     - podman-tui
     - vulkan-tools
-    # Desktop
-    - bibata-cursor-theme
-    - helium-bin
-    - vesktop
-    - telegram-desktop
-    - nautilus
-    - zed
+
     # Terminal
     - ghostty
     - ghostty-fish-completion
     - ghostty-nautilus
     - ghostty-shell-integration
     - ghostty-terminfo
-    # WINE for Pro Audio
-    - repo: copr:copr.fedorainfracloud.org:patrickl:wine-staging-dev
-      packages:
-        - libcurl-gnutls
-        - pipeasio
-        - wine
-        - wine-dxvk
-        - wine-mono
-        - winetricks
-        - yabridge
-        - yabridge-tui
-    # Misc
-    - pipewire
-    - wireplumber
-    - pipewire-pulseaudio
+
+    # Desktop
+    - bibata-cursor-theme
+    - helium-bin
+    - vesktop
+    - zed
 remove:
   auto-remove: true
   packages:
