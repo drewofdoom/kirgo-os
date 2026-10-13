@@ -7,7 +7,7 @@ install:
     - steam
     - gamemode
     - gamescope
-    - lutris
     - heroic-games-launcher
     - vesktop
+    - lutris
 ...
