@@ -41,7 +41,7 @@ install:
     - ghostty-shell-integration
     - ghostty-terminfo
     # WINE for Pro Audio
-    - repo: copr:copr.fedorainfracloud.org:patrickl:wine-staging-dev.repo
+    - repo: copr:copr.fedorainfracloud.org:patrickl:wine-staging-dev
       packages:
         - libcurl-gnutls
         - pipeasio
