@@ -5,8 +5,8 @@ permissions:
 
 on:
   schedule:
-   # - cron: "0 4 * * TUE" # A few hours after bluefin-stable
-   - cron: "0 4 * * *" # daily
+   - cron: "0 4 * * TUE" # A few hours after bluefin-stable
+   # - cron: "0 4 * * *" # daily
   push:
     branches:
       - main
