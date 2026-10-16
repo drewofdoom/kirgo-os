@@ -32,6 +32,7 @@ install:
     # Desktop
     - bibata-cursor-theme
     - helium-bin
+    - equibop
     - vesktop
     - repo: terra
       packages:
