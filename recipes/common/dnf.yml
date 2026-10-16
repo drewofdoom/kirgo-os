@@ -34,9 +34,7 @@ install:
     - helium-bin
     - equibop
     - vesktop
-    - repo: terra
-      packages:
-        - zed
+    - zed
 remove:
   auto-remove: true
   packages:
