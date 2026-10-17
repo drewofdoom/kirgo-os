@@ -33,7 +33,6 @@ install:
     - bibata-cursor-theme
     - helium-bin
     - equibop
-    - vesktop
     - zed
 remove:
   auto-remove: true
