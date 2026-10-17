@@ -21,7 +21,6 @@ install:
     - podman-machine
     - podman-tui
     - vulkan-tools
-    - z3
 
     # Terminal
     - ghostty
