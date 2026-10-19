@@ -34,8 +34,6 @@ install:
     - helium-bin
     - equibop
     - zed
-    - xdg-desktop-portal-wlr
-    - deskflow
 remove:
   auto-remove: true
   packages:
