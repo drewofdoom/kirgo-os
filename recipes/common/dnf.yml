@@ -34,6 +34,7 @@ install:
     - helium-bin
     - equibop
     - zed
+    - xdg-desktop-portal-wlr
 remove:
   auto-remove: true
   packages:
