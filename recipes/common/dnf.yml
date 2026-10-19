@@ -21,6 +21,7 @@ install:
     - podman-machine
     - podman-tui
     - vulkan-tools
+    - ca-trust-extracted
 
     # Terminal
     - ghostty
