@@ -31,9 +31,7 @@ install:
 
     # Desktop
     - bibata-cursor-theme
-    - helium-bin
     - equibop
-    - zed
 remove:
   auto-remove: true
   packages:

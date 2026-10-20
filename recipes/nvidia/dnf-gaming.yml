@@ -1,8 +1,0 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/modules/dnf-v1.json
----
-type: dnf
-install:
-  packages:
-    - steam
-    - heroic-games-launcher
-...
