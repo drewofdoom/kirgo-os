@@ -32,7 +32,6 @@ install:
     # Desktop
     - bibata-cursor-theme
     - arrpc
-    - equibop
 remove:
   auto-remove: true
   packages:
