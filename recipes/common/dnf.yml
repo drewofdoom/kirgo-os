@@ -4,8 +4,6 @@ type: dnf
 repos:
   files:
     - "https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo"
-  copr:
-    - imput/helium
   keys:
     - https://repos.fyralabs.com/terra44/key.asc
 install:
