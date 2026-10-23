@@ -19,6 +19,7 @@ install:
     - podman-machine
     - podman-tui
     - vulkan-tools
+    - ntsync-autoload
 
     # Terminal
     - ghostty
