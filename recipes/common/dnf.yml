@@ -31,6 +31,7 @@ install:
     # Desktop
     - bibata-cursor-theme
     - arrpc
+    - zen-browser
 remove:
   auto-remove: true
   packages:
