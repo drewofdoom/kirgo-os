@@ -4,13 +4,16 @@ type: dnf
 repos:
   files:
     - "https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo"
+  copr:
+   - c0mpile/builds
   keys:
     - https://repos.fyralabs.com/terra44/key.asc
 install:
   packages:
     # noctalia.dev
     # Umbriel (Window Manager), Noctalia (Shell), and greeter
-    - umbriel-nightly
+    - umbriel-git
+    - xdg-desktop-portal-umbriel-git
     - noctalia
     - noctalia-greeter
 
