@@ -6,7 +6,7 @@ repos:
     - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
     - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
   copr:
-   - c0mpile/builds
+    - c0mpile/builds
   keys:
     - https://repos.fyralabs.com/terra44/key.asc
     - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
@@ -40,6 +40,7 @@ install:
     - arrpc
     - brave-browser
     - zen-browser
+    - https://github.com/lullabyX/sone/releases/download/v0.23.0/SONE-0.23.0-1.x86_64.rpm
 remove:
   auto-remove: true
   packages:
