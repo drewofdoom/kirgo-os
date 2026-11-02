@@ -3,11 +3,13 @@
 type: dnf
 repos:
   files:
-    - "https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo"
+    - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
+    - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
   copr:
    - c0mpile/builds
   keys:
     - https://repos.fyralabs.com/terra44/key.asc
+    - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
   nonfree: rpmfusion
 install:
   packages:
@@ -36,6 +38,7 @@ install:
     # Desktop
     - bibata-cursor-theme
     - arrpc
+    - brave-browser
     - zen-browser
 remove:
   auto-remove: true
