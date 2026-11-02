@@ -38,7 +38,7 @@ install:
     # Desktop
     - bibata-cursor-theme
     - arrpc
-    - zen-browser
+    - brave-browser
 remove:
   auto-remove: true
   packages:
