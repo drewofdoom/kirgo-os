@@ -69,8 +69,11 @@ install:
     - brave-browser
     - zen-browser
 
+    # Chat
+    - telegram-desktop
+    - vesktop
+
     # Gaming
     - gamescope
     - steam
-    - vesktop
 ...
