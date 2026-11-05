@@ -8,7 +8,12 @@ repos:
   keys:
     - https://repos.fyralabs.com/terra45/key.asc
     - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
-  nonfree: rpmfusion
+  cleanup: true
+remove:
+  auto-remove: true
+  packages:
+    # NEW: Remove the proprietary AAC codec that blocks 32-bit Steam libraries
+    - libfdk-aac
 install:
   packages:
     # noctalia.dev
@@ -56,9 +61,8 @@ install:
     - bibata-cursor-theme
     - google-noto-mono-fonts
     - google-noto-sans-fonts
+    - fdk-aac-free
     - nautilus
-    - xdg-desktop-portal
-    - xdg-desktop-portal-gtk
     - zsync
 
     # Desktop
@@ -66,7 +70,7 @@ install:
     - zen-browser
 
     # Gaming
+    - gamescope
     - steam
     - vesktop
-    - heroic-games-launcher
 ...
