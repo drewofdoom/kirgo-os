@@ -20,6 +20,7 @@ install:
 
     # Secrets management
     - git-credential-oo7
+    - gnome-keyring
     - oo7-daemon
     - oo7-portal
     - oo7-cli
