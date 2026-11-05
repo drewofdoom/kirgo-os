@@ -18,13 +18,19 @@ install:
     - umbriel-nightly
     - xdg-desktop-portal-umbriel-nightly
 
+    # Secrets management
+    - git-credential-oo7
+    - oo7-daemon
+    - oo7-portal
+    - oo7-cli
+    - pam_oo7
+
     # Containers
     - podman-compose
     - podman-machine
     - podman-tui
 
     # Utilities
-    - git-credential-libsecret
     - ntsync-autoload
     - powertop
     - rclone
@@ -46,8 +52,6 @@ install:
     - adw-gtk3-theme
     - adwaita-fonts-all
     - bibata-cursor-theme
-    - gnome-keyring
-    - gnome-keyring-pam
     - google-noto-mono-fonts
     - google-noto-sans-fonts
     - nautilus
