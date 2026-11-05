@@ -56,6 +56,9 @@ install:
     - google-noto-mono-fonts
     - google-noto-sans-fonts
     - nautilus
+    - xdg-desktop-portal
+    - xdg-desktop-portal-gtk
+    - zsync
 
     # Desktop
     - brave-browser
