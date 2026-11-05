@@ -2,25 +2,27 @@
 
 > _"I was looking for the Cadillac..."_ — Jack Tenrec, _Cadillacs and Dinosaurs_ 1993 Arcade Game
 
-**Kirgo** is a highly opinionated, streamlined desktop image based on Universal Blue's Bluefin. Named after the iconic comic series and its dinosaur theme, Kirgo takes Bluefin's rock-solid foundation and pares it down to essentials while keeping your GNOME services intact.
+**Kirgo** is a highly opinionated, streamlined desktop image built with [BlueBuild](https://blue-build.org) atop Fedora Atomic. It strips away the heavy default desktop environments and layers on a curated selection of tools designed around the [Umbriel](https://noctalia.dev/umbriel) compositor and [Noctalia](https://noctalia.dev/shell) shell.
 
 ---
 
 ## ⚠️ Important Notice
 
-**This is a custom modification of Bluefin.** If you value stability over customization, stick with official Bluefin images from [Project Bluefin](https://projectbluefin.io). Kirgo removes many GNOME packages. Use at your own discretion.
+**This is a custom operating system.** It is not an official Fedora or Universal Blue product. Kirgo is a fresh base layer—unlike standard desktop images, it does not include every desktop utility by default. Use at your own discretion.
 
 ---
 
-## What's Different?
+## What's Inside?
 
-| Category            | Bluefin              | Kirgo                              |
-| ------------------- | -------------------- | ---------------------------------- |
-| **Compositor**      | GNOME Shell          | Umbriel                            |
-| **Display Manager** | GDM                  | greetd                             |
-| **Shell**           | GNOME+extensions     | Noctalia                           |
-| **Kernel Options**  | Fedora defaults      | Full preemption and ntsync enabled |
-| **Browsers**        | Firefox from flatpak | Zen Browser (installed in base)    |
+Kirgo is built from scratch using [BlueBuild](https://blue-build.org), so it doesn't carry over the baggage of any other desktop image. Here's what it includes out of the box:
+
+- **[Umbriel](https://noctalia.dev/umbriel)** as the primary Wayland compositor
+- **[Noctalia](https://noctalia.dev/shell)** for the window manager / desktop shell layer
+- **greetd** instead of GDM for a lightweight display manager
+- Custom kernel arguments for performance tuning (`preempt=full` and `mitigations=off`)
+- **Ghostty** as the default terminal, with Fish completions integrated
+- **ZEN and Brave Browsers** pre-installed
+- Optional `-nvidia-open` build targeting the latest rolling NVIDIA driver stack
 
 ---
 
@@ -28,47 +30,41 @@
 
 ### Prerequisites
 
-- Fedora Atomic desktop (Silverblue/Kinoite) or existing uBlue image (Bluefin preferred)
-- `bootc` installed
-- Sufficient disk space (images are ~6–8 GB each)
+- A machine capable of running Wayland + Umbriel
+- An NVIDIA GPU (Turing 10-series or newer) if using the `-nvidia-open` image
+- Sufficient disk space (images are ~5–8 GB depending on the variant)
 
-## Switching to Kirgo
+## Installing Kirgo
 
-### AMD/Intel Graphics (Main Build)
-
-```bash
-## AMD/Intel Graphics
-# Preview what will be installed
-bootc preview --ref ostree/container://ghcr.io/drewofdoom/kirgo:kirgo
-
-# Switch (requires reboot)
-bootc switch --transient ostree/container://ghcr.io/drewofdoom/kirgo:kirgo
-
-# Or permanent switch
-sudo bootc switch --enforce-container-sigpolicy ghcr.io/drewofdoom/kirgo
-```
-
-### NVIDIA Graphics (Open Source Driver)
+_Requires `bootc` and authentication to GitHub Container Registry (GHCR)._
 
 ```bash
 # Preview what will be installed
-bootc preview --ref ostree/container://ghcr.io/drewofdoom/kirgo-nvidia-open
+bootc preview --ref ostree/container://ghcr.io/<YOUR-ORG>/kirgo-os:<VARIANT>
 
-# Switch (requires reboot)
-bootc switch --transient ostree/container://ghcr.io/drewofdoom/kirgo-nvidia-open
-
-# Or permanent switch
-sudo bootc switch --enforce-container-sigpolicy ghcr.io/drewofdoom/kirgo-nvidia-open
+# Switch to the image (requires reboot)
+sudo bootc switch ghcr.io/<YOUR-ORG>/kirgo-os:<VARIANT>
 ```
 
-### Building Locally
+Available variants:
+- `kirgo` → AMD/Intel graphics (Standard Base)
+- `kirgo-nvidia-open` → NVIDIA cards requiring open-kernel modules (Latest Rolling Driver)
 
-_You must install [bluebuild](https://github.com/blue-build/cli) to build locally._
+*Note: You may be prompted to enroll MOK keys during first boot to verify the cosign signatures.*
+
+---
+
+## Building Locally
+
+You must install the [BlueBuild CLI](https://github.com/blue-build/cli) to build locally.
 
 ```bash
 # Clone the repository
-git clone https://github.com/drewofdoom/kirgo.git
-cd kirgo
+git clone https://github.com/drewofdoom/kirgo-os.git
+cd kirgo-os
+
+# Authenticate to GHCR
+podman login ghcr.io -u <USERNAME> --password "$(gh auth token)"
 
 # Build AMD/Intel variant
 bluebuild build ./recipes/kirgo.yml
@@ -77,35 +73,45 @@ bluebuild build ./recipes/kirgo.yml
 bluebuild build ./recipes/kirgo-nvidia-open.yml
 ```
 
+---
+
 ## Customizing
+
+Kirgo uses BlueBuild's declarative YAML modules (`common/files.yml`, `common/dnf.yml`, etc.) to manage packages, systemd units, and filesystem configurations.
 
 ### Layer additional packages
 
-_n.b. Not recommended for most applications. Use Flatpaks or brew instead if you can!_
+Edit `recipes/common/dnf.yml` and add items to the `install.packages:` list. DNF handles dependency resolution automatically.
 
-_If you must use layered packages, consider forking this repo and modifying the configuration to your suit your needs._
+```yaml
+modules:
+  # ...
+  - type: dnf
+    repos:
+      # ...
+    install:
+      packages:
+        - my-custom-app
+```
 
-`rpm-ostree install <package-name>`
+### Managing Flatpaks and Homebrew
 
-### Or use Flatpak for most applications
+Since Kirgo doesn't ship a massive pre-packaged application suite, you're encouraged to extend your desktop via standard atomic-user tools:
 
-`flatpak install flathub <application>`
+```bash
+# Desktop GUI apps (Flatpak)
+flatpak install flathub <application>
 
-### Or install stuff with brew
+# Command-line utilities (Homebrew/brew)
+brew install <package-name>
+```
 
-`brew install <package-name>`
-
-### Updating to the latest image
-
-`ujust update`
-
-- Automatic updates are handled by the uBlue update timer.
+---
 
 ## Upstream Projects
 
 | Topic           | Resource                        |
 | --------------- | ------------------------------- |
-| Project Bluefin | https://projectbluefin.io       |
 | uBlue Project   | https://universal-blue.org      |
 | BlueBuild       | https://blue-build.org          |
 | Umbriel Compositor | https://noctalia.dev/umbriel |
