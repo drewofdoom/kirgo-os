@@ -70,7 +70,6 @@ install:
     - zen-browser
 
     # Chat
-    - telegram-desktop
     - vesktop
 
     # Gaming
