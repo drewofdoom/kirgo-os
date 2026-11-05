@@ -4,6 +4,8 @@
 
 **Kirgo** is a highly opinionated, streamlined desktop image built with [BlueBuild](https://blue-build.org) atop Fedora Atomic. It strips away the heavy default desktop environments and layers on a curated selection of tools designed around the [Umbriel](https://noctalia.dev/umbriel) compositor and [Noctalia](https://noctalia.dev/shell) shell.
 
+*n.b.* You really probably shouldn't be directly pulling this image. I've seen more downloads for the images than just myself, which worries me a little bit. If you want to use this, I suggest you fork it and build it yourself. That way, you can control what you're getting and not get suddenly clobbered when I do things like shift the whole build off of Bluefin.
+
 ---
 
 ## ⚠️ Important Notice
