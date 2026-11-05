@@ -5,6 +5,7 @@ system:
   enabled:
     - greetd.service
     - noctalia-greeter-setup.service
+    - oo7-daemon.service
     - podman.socket
     - uupd.service
 ...
