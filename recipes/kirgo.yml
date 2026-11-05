@@ -10,11 +10,11 @@ labels:
   org.opencontainers.image.description: Kirgo OS
 
 modules:
-  - from-file: files.yml
   - from-file: kargs.yml
   - from-file: dnf.yml
   - type: brew
     nofile-limits: true
+  - from-file: files.yml
   - from-file: systemd.yml
   - type: os-release
     properties:
