@@ -54,7 +54,7 @@ install:
 
     # Desktop
     - brave-browser
-    - equibop
+    - vesktop
     - zen-browser
     - https://github.com/lullabyX/sone/releases/download/v0.23.0/SONE-0.23.0-1.x86_64.rpm
 ...
