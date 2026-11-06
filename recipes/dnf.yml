@@ -2,12 +2,12 @@
 ---
 type: dnf
 repos:
+  copr:
+    - imput/helium
   files:
     - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
-    - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
   keys:
     - https://repos.fyralabs.com/terra45/key.asc
-    - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
   cleanup: true
 install:
   packages:
@@ -59,7 +59,9 @@ install:
     - zsync
 
     # Desktop
-    - brave-browser
     - vesktop
-    - zen-browser
+    - helium-bin
+remove:
+  packages:
+    - firefox
 ...
