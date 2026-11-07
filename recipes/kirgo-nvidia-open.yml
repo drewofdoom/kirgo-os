@@ -16,6 +16,21 @@ modules:
     nofile-limits: true
   - from-file: files.yml
   - from-file: systemd.yml
+
+  # Nvidia-specific
+  - type: dnf
+    repos:
+      files:
+        - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
+      keys:
+        - https://repos.fyralabs.com/terra45/key.asc
+      cleanup: true
+    install:
+      allow-erasing: true
+      packages:
+        - steam
+        - gamescope
+        - gamemode
   - type: os-release
     properties:
       ID: kirgo

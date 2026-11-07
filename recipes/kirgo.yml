@@ -16,6 +16,8 @@ modules:
     nofile-limits: true
   - from-file: files.yml
   - from-file: systemd.yml
+
+  # AMD/Intel Specific
   - type: os-release
     properties:
       ID: kirgo
