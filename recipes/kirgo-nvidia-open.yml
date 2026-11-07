@@ -28,9 +28,10 @@ modules:
     install:
       allow-erasing: true
       packages:
-        - steam
-        - gamescope
         - gamemode
+        - gamescope
+        - mangohud
+        - steam
   - type: os-release
     properties:
       ID: kirgo
