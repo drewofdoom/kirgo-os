@@ -31,7 +31,6 @@ install:
     - podman-tui
 
     # Utilities
-    - gcc-c++
     - ntsync-autoload
     - powertop
     - rclone
