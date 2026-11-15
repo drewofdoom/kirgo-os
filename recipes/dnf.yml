@@ -38,6 +38,7 @@ install:
     - tailscale
     - vulkan-tools
     - uupd
+    - ydotool
     - https://github.com/knightinfected/PipeWireController/releases/download/v0.6.3/pipewire-control-center-0.6.3-1.fc44.noarch.rpm
 
     # Terminal
