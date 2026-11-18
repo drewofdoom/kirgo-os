@@ -13,6 +13,8 @@ install:
   packages:
     # noctalia.dev
     # Umbriel (Window Manager), Noctalia (Shell), and greeter
+    - luciole-nightly
+    - luciole-nightly-fish-completion
     - noctalia
     - noctalia-greeter
     - umbriel-nightly
